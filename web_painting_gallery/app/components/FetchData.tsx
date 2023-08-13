@@ -43,18 +43,24 @@ const FetchArts = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="flex bg-tertiary text-black pt-36">
 			{arts.map((art) => (
-				<div key={art.id}>
-					<h1>{art.title}</h1>
+				<div
+					key={art.id}
+					className="flex flex-col items-center"
+				>
+					<h1 className="p-4 text-center">{art.title}</h1>
 					<img
 						src={art.image.url}
 						alt={art.title}
 						height={400}
 						width={400}
 					/>
-					<p>{art.artist}</p>
-					<p>{art.description}</p>
+					<p className="text-center py-4 font-bold">
+						<span className="font-normal">Author:</span> {art.artist}
+					</p>
+					<p className="text-justify p-4">{art.description}</p>
+					<p className="text-center py-2">{art.tags}</p>
 				</div>
 			))}
 		</div>
